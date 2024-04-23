@@ -1,0 +1,7 @@
+# git
+/.git
+
+# code editors
+/.vscode
+/.idea
+/.fleet
