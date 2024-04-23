@@ -13,6 +13,7 @@
       flake-checker.enable = true;
       lua-ls.enable = true;
       nil.enable = true;
+      treefmt.enable = true;
       typos.enable = true;
     };
   };
