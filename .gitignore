@@ -5,3 +5,7 @@
 /.vscode
 /.idea
 /.fleet
+
+# generated
+/.direnv
+/.pre-commit-config.yaml

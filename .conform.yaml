@@ -1,0 +1,21 @@
+policies:
+  - type: commit
+    spec:
+      maximumOfOneCommit: true
+      header:
+        case: lower
+        imperative: true
+        invalidLastCharacters: .
+        length: 89
+      body:
+        required: false
+      conventional:
+        descriptionLength: 72
+        types:
+          - feat
+          - fix
+          - chore
+        scopes:
+          - flake
+      spellcheck:
+        locale: US
