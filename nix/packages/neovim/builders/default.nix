@@ -1,7 +1,8 @@
 { callPackage, ... }:
 let
-  buildNeovimConfiguration = callPackage ./builders/neovim-configuration.nix { };
-  buildNeovim = callPackage ./builders/neovim.nix { inherit buildNeovimConfiguration; };
+  buildNeovimConfiguration = callPackage ./neovim-configuration.nix { };
+  buildNeovimPlugins = callPackage ./neovim-plugins.nix { };
+  buildNeovim = callPackage ./neovim.nix { inherit buildNeovimConfiguration buildNeovimPlugins; };
 in
 {
   inherit buildNeovimConfiguration buildNeovim;

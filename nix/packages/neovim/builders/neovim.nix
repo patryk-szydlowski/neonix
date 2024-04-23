@@ -1,6 +1,7 @@
 {
   lib,
   buildNeovimConfiguration,
+  buildNeovimPlugins,
   neovimUtils,
   wrapNeovimUnstable,
   neovim-unwrapped,
@@ -21,7 +22,9 @@ let
     withRuby = false;
     wrapRC = wrap;
     customRC = if wrap then ":luafile ${src}/init.lua" else ":luafile init.lua";
-    plugins = (lib.lists.optional wrap configurationPlugin) ++ extraPlugins;
+    plugins = buildNeovimPlugins {
+      plugins = (lib.lists.optional wrap configurationPlugin) ++ extraPlugins;
+    };
   };
   wrapperArgs = lib.strings.concatStringsSep " " [
     (lib.strings.escapeShellArgs configuration.wrapperArgs)

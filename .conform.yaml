@@ -17,5 +17,6 @@ policies:
           - chore
         scopes:
           - flake
+          - builders
       spellcheck:
         locale: US
