@@ -29,4 +29,16 @@ function M.setup()
   end
 end
 
+function M.plugin(plugin)
+  local plugin_path = require("loader.plugins.lazy-nix-helper").get_plugin_path(plugin)
+
+  plugin.dir = plugin_path
+
+  for index, plugin_dependency in ipairs(plugin.dependencies or {}) do
+    plugin.dependencies[index] = M.plugin(plugin_dependency)
+  end
+
+  return plugin
+end
+
 return M
