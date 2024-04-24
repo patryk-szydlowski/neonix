@@ -36,6 +36,8 @@ function M.plugin(plugin)
 
   if M.options.is_nix_environment then
     Utils.fix_plugin_in_nix_environment(plugin)
+  else
+    Utils.fix_plugin_in_non_nix_environment(plugin)
   end
 
   for index, plugin_dependency in ipairs(plugin.dependencies or {}) do
