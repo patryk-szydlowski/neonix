@@ -1,3 +1,5 @@
+local Utils = require("loader.utils")
+
 local M = {}
 
 M.options = {
@@ -30,9 +32,7 @@ function M.setup()
 end
 
 function M.plugin(plugin)
-  local plugin_path = require("loader.plugins.lazy-nix-helper").get_plugin_path(plugin)
-
-  plugin.dir = plugin_path
+  plugin.dir = Utils.get_plugin_path(plugin)
 
   for index, plugin_dependency in ipairs(plugin.dependencies or {}) do
     plugin.dependencies[index] = M.plugin(plugin_dependency)

@@ -26,10 +26,8 @@ function M.setup()
   })
 end
 
-function M.get_plugin_path(plugin)
-  local plugin_name = plugin[1]:gsub("%.nvim$", ""):gsub("^.+/", "")
-  local plugin_path = require("lazy-nix-helper").get_plugin_path(plugin_name)
-  return plugin_path
+function M.get_plugin_path(plugin_name)
+  return require("lazy-nix-helper").get_plugin_path(plugin_name)
 end
 
 return M
