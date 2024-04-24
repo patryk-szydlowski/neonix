@@ -1,0 +1,1 @@
+{ vimPlugins, ... }: vimPlugins

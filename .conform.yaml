@@ -18,5 +18,6 @@ policies:
         scopes:
           - flake
           - builders
+          - plugins
       spellcheck:
         locale: US

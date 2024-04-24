@@ -1,8 +1,9 @@
-{ callPackage, vimPlugins, ... }:
+{ callPackage, ... }:
 { src, wrap, ... }:
 let
   builders = callPackage ./builders { };
-  extraPlugins = [ vimPlugins.nvim-treesitter.withAllGrammars ];
+  plugins = callPackage ./plugins { };
+  extraPlugins = [ plugins.nvim-treesitter.withAllGrammars ];
   extraPackages = [ ];
 in
 builders.buildNeovim {
