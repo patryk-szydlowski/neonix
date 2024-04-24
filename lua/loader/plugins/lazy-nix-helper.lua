@@ -5,7 +5,7 @@ local M = {}
 function M.setup()
   local lazy_nix_helper_path = Loader.options.plugin_paths["lazy-nix-helper.nvim"]
     or vim.fn.stdpath("data") .. "/lazy_nix_helper/lazy_nix_helper.nvim"
-  local lazy_nix_helper_repo = "https://github.com/b-src/lazy_nix_helper.nvim.git"
+  local lazy_nix_helper_repo = "https://github.com/b-src/lazy-nix-helper.nvim.git"
 
   if not (vim.uv or vim.loop).fs_stat(lazy_nix_helper_path) then
     vim.fn.system({

@@ -11,7 +11,7 @@ function M.setup()
   local plugin_paths_available, plugin_paths = pcall(require, "loader.paths")
 
   M.options.is_nix_environment = plugin_paths_available
-  M.options.plugin_paths = vim.tbl_deep_extend("force", {}, plugin_paths or {})
+  M.options.plugin_paths = plugin_paths_available and plugin_paths or {}
 
   if M.options.is_nix_environment then
     for _, runtime_path in ipairs(vim.opt.rtp:get()) do
