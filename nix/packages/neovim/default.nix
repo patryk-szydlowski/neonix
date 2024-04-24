@@ -9,6 +9,7 @@ let
     plugins.github-nvim-theme
     plugins.lazy-nix-helper
     plugins.lazy-nvim
+    plugins.neoconf-nvim
     plugins.nvim-cmp
     plugins.nvim-lspconfig
     plugins.nvim-treesitter.withAllGrammars
