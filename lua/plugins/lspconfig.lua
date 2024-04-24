@@ -3,9 +3,12 @@ return require("loader").plugin({
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     { "folke/neoconf.nvim", opts = {} },
+    { "folke/neodev.nvim" },
   },
   opts = {},
   config = function(_, opts)
+    require("neodev").setup()
+
     local servers =
       vim.tbl_deep_extend("force", opts.servers or {}, require("neoconf").get("lspconfig", {}))
 

@@ -10,6 +10,7 @@ let
     plugins.lazy-nix-helper
     plugins.lazy-nvim
     plugins.neoconf-nvim
+    plugins.neodev-nvim
     plugins.nvim-cmp
     plugins.nvim-lspconfig
     plugins.nvim-treesitter.withAllGrammars

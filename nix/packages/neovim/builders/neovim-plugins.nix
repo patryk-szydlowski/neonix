@@ -45,6 +45,7 @@ let
         "/spell"
         "/syntax"
         "/tutor"
+        "/types"
         "/after"
         "/ftdetect"
         "/data"
