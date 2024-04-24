@@ -1,5 +1,6 @@
 {
   lib,
+  buildNeovimLoader,
   buildNeovimConfiguration,
   buildNeovimPlugins,
   neovimUtils,
@@ -15,6 +16,7 @@
   ...
 }:
 let
+  loaderPlugin = buildNeovimLoader { plugins = extraPlugins; };
   configurationPlugin = buildNeovimConfiguration { inherit src; };
   configuration = neovimUtils.makeNeovimConfig {
     withPython3 = false;
@@ -23,7 +25,7 @@ let
     wrapRC = wrap;
     customRC = if wrap then ":luafile ${src}/init.lua" else ":luafile init.lua";
     plugins = buildNeovimPlugins {
-      plugins = (lib.lists.optional wrap configurationPlugin) ++ extraPlugins;
+      plugins = [ loaderPlugin ] ++ (lib.lists.optional wrap configurationPlugin) ++ extraPlugins;
     };
   };
   wrapperArgs = lib.strings.concatStringsSep " " [
