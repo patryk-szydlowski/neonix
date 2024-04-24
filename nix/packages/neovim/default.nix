@@ -7,6 +7,7 @@ let
     plugins.github-nvim-theme
     plugins.lazy-nix-helper
     plugins.lazy-nvim
+    plugins.nvim-treesitter.withAllGrammars
   ];
   extraPackages = [ ];
 in

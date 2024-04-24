@@ -15,6 +15,7 @@ let
       configurePhase = ''
         ${prev.configurePhase or ""}
         rm -f doc/tags
+        rm -rf queries
       '';
     });
   mergePlugins =
