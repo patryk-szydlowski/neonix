@@ -8,7 +8,10 @@
           config.treefmt.build.devShell
         ];
 
-        packages = [ config.packages.neovim-unwrapped ];
+        packages = [
+          config.packages.neovim-unwrapped
+          pkgs.lua-language-server
+        ];
 
         shellHook = ''
           export XDG_CONFIG_HOME=$(realpath .)

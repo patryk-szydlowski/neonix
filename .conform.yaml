@@ -17,6 +17,7 @@ policies:
           - chore
         scopes:
           - flake
+          - loader
           - builders
           - plugins
       spellcheck:
