@@ -11,6 +11,7 @@
         packages = [
           config.packages.neovim-unwrapped
           pkgs.lua-language-server
+          pkgs.nil
         ];
 
         shellHook = ''

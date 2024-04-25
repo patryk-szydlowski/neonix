@@ -13,6 +13,7 @@
     }
   },
   "lspconfig": {
-    "lua_ls": {}
+    "lua_ls": {},
+    "nil_ls": {}
   }
 }
