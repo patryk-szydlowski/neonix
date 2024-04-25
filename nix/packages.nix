@@ -12,7 +12,6 @@
           src = self;
           wrap = false;
         };
-        treefmt = pkgs.callPackage ./packages/treefmt { };
       };
     };
 }

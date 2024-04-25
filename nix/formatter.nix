@@ -3,14 +3,14 @@
   imports = [ inputs.treefmt-nix.flakeModule ];
 
   perSystem =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       treefmt = {
         projectRootFile = "flake.nix";
 
         package = pkgs.writeShellApplication {
           name = "treefmt";
-          runtimeInputs = [ config.packages.treefmt ];
+          runtimeInputs = [ pkgs.treefmt ];
           text = ''treefmt --hidden "$@"'';
         };
 

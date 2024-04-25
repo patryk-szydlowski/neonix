@@ -1,11 +1,11 @@
 {
+  lib,
   rustPlatform,
   fetchFromGitHub,
-  treefmt,
   ...
 }:
 rustPlatform.buildRustPackage {
-  inherit (treefmt) pname meta;
+  pname = "treefmt";
 
   version = "2024-04-19";
 
@@ -17,4 +17,11 @@ rustPlatform.buildRustPackage {
   };
 
   cargoSha256 = "sha256-Hp9OT0/YZC+u4A0TL607X6UipblGd2Df2PYft+YhNsY=";
+
+  meta = {
+    description = "one CLI to format the code tree";
+    homepage = "https://github.com/numtide/treefmt";
+    license = lib.licenses.mit;
+    maintainers = [ lib.maintainers.zimbatm ];
+  };
 }

@@ -7,6 +7,7 @@
         ./nix/checks.nix
         ./nix/devshells.nix
         ./nix/formatter.nix
+        ./nix/overlays.nix
         ./nix/packages.nix
       ];
     };
