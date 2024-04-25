@@ -7,12 +7,16 @@
   },
   "neoconf": {
     "plugins": {
+      "jsonls": {
+        "enabled": false
+      },
       "lua_ls": {
         "enabled": true
       }
     }
   },
   "lspconfig": {
+    "jsonls": {},
     "lua_ls": {},
     "nil_ls": {}
   }
