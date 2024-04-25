@@ -26,6 +26,7 @@ function M.setup()
           runtime_path,
           vim.env.VIMRUNTIME,
         }
+        break
       end
     end
   end
