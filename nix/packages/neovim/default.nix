@@ -1,4 +1,4 @@
-{ callPackage, ... }:
+{ pkgs, callPackage, ... }:
 { src, wrap, ... }:
 let
   builders = callPackage ./builders { };
@@ -18,8 +18,19 @@ let
     plugins.nvim-cmp
     plugins.nvim-lspconfig
     plugins.nvim-treesitter.withAllGrammars
+    plugins.nvim-web-devicons
+    plugins.plenary-nvim
+    plugins.telescope-file-browser-nvim
+    plugins.telescope-frecency-nvim
+    plugins.telescope-fzf-native-nvim
+    plugins.telescope-nvim
+    plugins.telescope-ui-select-nvim
   ];
-  extraPackages = [ ];
+  extraPackages = [
+    pkgs.fd
+    pkgs.fzf
+    pkgs.ripgrep
+  ];
 in
 builders.buildNeovim {
   inherit
