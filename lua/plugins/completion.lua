@@ -7,6 +7,7 @@ return require("loader").plugin({
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-buffer" },
+    { "onsails/lspkind.nvim" },
   },
   opts = function()
     local cmp = require("cmp")
@@ -16,6 +17,17 @@ return require("loader").plugin({
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
         end,
+      },
+      formatting = {
+        format = require("lspkind").cmp_format({
+          mode = "symbol",
+          menu = {
+            nvim_lsp = "[LSP]",
+            luasnip = "[Snippet]",
+            path = "[Path]",
+            buffer = "[Buffer]",
+          },
+        }),
       },
       completion = {
         completeopt = "menu,menuone,noinsert",

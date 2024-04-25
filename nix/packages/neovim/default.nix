@@ -11,6 +11,7 @@ let
     plugins.github-nvim-theme
     plugins.lazy-nix-helper
     plugins.lazy-nvim
+    plugins.lspkind-nvim
     plugins.luasnip
     plugins.neoconf-nvim
     plugins.neodev-nvim
