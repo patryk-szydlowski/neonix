@@ -4,14 +4,8 @@
     { pkgs, ... }:
     {
       packages = {
-        neovim = pkgs.callPackage ./packages/neovim { } {
-          src = self;
-          wrap = true;
-        };
-        neovim-unwrapped = pkgs.callPackage ./packages/neovim { } {
-          src = self;
-          wrap = false;
-        };
+        neovim = pkgs.callPackage ./packages/neovim/wrapped.nix { } { src = self; };
+        neovim-unwrapped = pkgs.callPackage ./packages/neovim/unwrapped.nix { };
       };
     };
 }

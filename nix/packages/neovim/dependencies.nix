@@ -1,9 +1,9 @@
 { pkgs, callPackage, ... }:
-{ src, wrap, ... }:
 let
-  builders = callPackage ./builders { };
   plugins = callPackage ./plugins { };
-  extraPlugins = [
+in
+{
+  plugins = [
     plugins.cmp-buffer
     plugins.cmp-nvim-lsp
     plugins.cmp-path
@@ -31,12 +31,4 @@ let
     pkgs.fzf
     pkgs.ripgrep
   ];
-in
-builders.buildNeovim {
-  inherit
-    src
-    wrap
-    extraPlugins
-    extraPackages
-    ;
 }
