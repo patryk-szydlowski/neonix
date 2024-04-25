@@ -4,11 +4,14 @@ let
   builders = callPackage ./builders { };
   plugins = callPackage ./plugins { };
   extraPlugins = [
+    plugins.cmp-buffer
     plugins.cmp-nvim-lsp
     plugins.cmp-path
+    plugins.cmp_luasnip
     plugins.github-nvim-theme
     plugins.lazy-nix-helper
     plugins.lazy-nvim
+    plugins.luasnip
     plugins.neoconf-nvim
     plugins.neodev-nvim
     plugins.nvim-cmp
