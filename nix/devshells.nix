@@ -10,13 +10,9 @@
 
         packages = [
           config.packages.neovim-unwrapped
+          pkgs.json-language-server
           pkgs.lua-language-server
           pkgs.nil
-          (pkgs.nodePackages.vscode-json-languageserver.overrideAttrs {
-            postInstall = ''
-              mv $out/bin/vscode-json-languageserver $out/bin/vscode-json-language-server
-            '';
-          })
         ];
 
         shellHook = ''
