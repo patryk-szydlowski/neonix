@@ -18,9 +18,9 @@ return require("loader").plugin({
       require("cmp_nvim_lsp").default_capabilities()
     )
 
-    for server_name, server_opts in pairs(servers) do
+    vim.iter(servers):each(function(server_name, server_opts)
       server_opts.capabilities = capabilities
       require("lspconfig")[server_name].setup(server_opts)
-    end
+    end)
   end,
 })
