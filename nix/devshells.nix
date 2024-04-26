@@ -17,7 +17,7 @@
 
         shellHook = ''
           export XDG_CONFIG_HOME=$(realpath .)
-          export NVIM_APPNAME=.
+          export NVIM_APPNAME=./
           export EDITOR=nvim
           export VISUAL=nvim
         '';

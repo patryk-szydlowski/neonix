@@ -4,7 +4,7 @@
   buildNeovimPlugins,
   neovimUtils,
   wrapNeovimUnstable,
-  neovim-unwrapped,
+  neovim-nightly-unwrapped,
   ...
 }:
 {
@@ -28,4 +28,4 @@ let
     ''--suffix PATH : ${lib.makeBinPath extraPackages}''
   ];
 in
-wrapNeovimUnstable neovim-unwrapped (configuration // { inherit wrapperArgs; })
+wrapNeovimUnstable neovim-nightly-unwrapped (configuration // { inherit wrapperArgs; })
